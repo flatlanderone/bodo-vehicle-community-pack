@@ -1,0 +1,41 @@
+<BuyTelricsHorsesOnDayOne>
+
+<!-- Set all horses to be for sale at all game stages.  horseFLTR is set in items.xml -->
+
+<append xpath="/traders/traderstage_templates">
+		<traderstage_template name="horseFLTR">
+			<entry min="1" max="999999" quality="0"/>
+		</traderstage_template>
+</append>
+
+<!-- <remove xpath="/traders/trader_item_groups/trader_item_group[@name='traderAlways']/item[@group='groupHorses']"/> -->
+
+<!-- Set all horses and steam vehicles to be always for sale. -->
+<append xpath="/traders/trader_item_groups/trader_item_group[@name='traderAlways']">
+	<item name="vehicleSteamVelocipedePlaceable"/>
+	<item name="vehicleSteamHorsePlaceable"/>
+	<item name="vehicleBalloon2Placeable"/>
+	<item name="vehicleBalloon3Placeable"/>
+	<item name="vehicleBalloon4Placeable"/>
+	<item name="vehicleWWMDinkyDonkeyPlaceable"/>
+	<item name="vehicleWWMDinkyRacingDonkeyPlaceable"/>
+	<item name="vehicleWWMHorseT1Placeable"/>
+	<item name="vehicleWWMHorseT2Placeable"/>
+	<item name="vehicleWWMHorseT3Placeable"/>
+
+</append>
+
+<!-- Add wheels to rareTools group to maintain their availability. -->
+<append xpath="/traders/trader_item_groups/trader_item_group[@name='rareTools']">
+	<item name="vehicleWheels"/>
+</append>
+
+<!-- Remove vehicles from traderGeneral group to avoid duplication. This may mean that traders will never carry complete vehicles.-->
+<remove xpath="/traders/trader_item_groups/trader_item_group[@name='traderGeneral']/item[@group='groupVehicles']" />
+
+
+<!-- Remove groupVehicles from trader Bobs's inventory to avoid duplication.  -->
+
+<remove xpath="/traders/trader_info[@id='6']/trader_items/item[@group='groupVehicles']" />
+
+</BuyTelricsHorsesOnDayOne>

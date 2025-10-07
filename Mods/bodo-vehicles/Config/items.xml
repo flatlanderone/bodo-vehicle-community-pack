@@ -1,0 +1,34 @@
+<bodovehicles>
+
+
+<!-- ***COMMON CHANGES -->
+<!-- Changed TraderStageTemplate attribute to avoid making bicycles and bicycle parts always for sale. -->
+<setattribute xpath="/items/item[@name='' 
+or @name='']/property[@name='TraderStageTemplate']" name="value">vehicleBODO</setattribute>
+
+
+
+confitional
+
+include
+
+
+<!-- *** Change Trader group to TCHorses or TCVehicles . -->
+
+<!-- If no trader group defined, append Group property  -->
+
+<!-- Mechanical vehicles -->
+
+<append xpath="/items/item[@name=' ' or @name=' ']">
+	<property name="Group" value="Science,TCVehicles"/>
+</append>
+
+<!-- Animal vehicles -->
+<append xpath="/items/item[@name='' or @name='' or @name='' ]">
+	<property name="Group" value="Science,TCHorses"/>
+</append>
+
+<!-- Change existing trader group -->
+<set xpath="/items/item[@name=' ' or @name=' ' ]/property[@name='Group']/@value">Science,TCVehicles</set>
+
+</bodovehicles>

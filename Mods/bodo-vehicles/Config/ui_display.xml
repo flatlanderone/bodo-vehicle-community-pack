@@ -1,0 +1,21 @@
+<RamblingMan>
+
+<!-- *** Wild West Mod -->
+<conditional>
+<if cond="mod_loaded('V2_WildWestMod')">
+<!-- Wild West Mod V2_WildWestMod -->
+<!-- ui_game_symbol_horse -->
+
+<append xpath="/ui_display_info/trader_category_display">
+		<trader_category name="TCHorses" icon="ui_game_symbol_horse" display_name="lblCategoryHorses" />		
+</append>
+
+<append xpath="/ui_display_info/trader_category_display">
+		<trader_category name="TCVehicles" icon="ui_game_symbol_steamhorse" display_name="lblCategoryVehicles" />		
+</append>
+
+
+
+</if>
+</conditional>
+</RamblingMan>
